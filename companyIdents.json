@@ -1,0 +1,19 @@
+{
+  "paths": {
+    "msgInput": "C:\\Users\\andym\\Desktop\\invoice\\input",
+    "pdfOutput": "C:\\Users\\andym\\Desktop\\invoice\\input",
+    "msgArchive": "C:\\Users\\andym\\Desktop\\invoice\\input"
+
+  },
+
+  "companies": {
+    "F_AT": [
+      "ATU11111111",
+      "Alpenmarkt"
+    ],
+    "F_DE": [
+      "ATU22222222",
+      "Donau"
+    ]
+  }
+}

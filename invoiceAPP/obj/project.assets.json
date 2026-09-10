@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\andym\\Desktop\\invoice\\invoiceAPP\\invoiceAPP.csproj",
+      "projectUniqueName": "C:\\Users\\andym\\Desktop\\invoice\\InvoiceAPP\\invoiceAPP.csproj",
       "projectName": "invoiceAPP",
-      "projectPath": "C:\\Users\\andym\\Desktop\\invoice\\invoiceAPP\\invoiceAPP.csproj",
+      "projectPath": "C:\\Users\\andym\\Desktop\\invoice\\InvoiceAPP\\invoiceAPP.csproj",
       "packagesPath": "C:\\Users\\andym\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\andym\\Desktop\\invoice\\invoiceAPP\\obj\\",
+      "outputPath": "C:\\Users\\andym\\Desktop\\invoice\\InvoiceAPP\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\andym\\AppData\\Roaming\\NuGet\\NuGet.Config",

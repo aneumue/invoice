@@ -1,1 +1,6 @@
-﻿Console.WriteLine("Hello, World!");
+﻿using InvoiceAPP.Services;
+
+Console.WriteLine("Hello, World!");
+
+var pipe = new StartPipe();
+var invoices = pipe.Run();

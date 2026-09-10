@@ -14,7 +14,7 @@ public class StartPipe
         var msgExtractor = new MsgAttachmentExtractor();
 
         string jsonFilePath =
-            "/home/andy/Desktop/invoice/InvoiceAPP/companyIdents.json";
+            "C:\\Users\\andym\\Desktop\\invoice\\companyIdents.json";
 
         string json = File.ReadAllText(jsonFilePath);
 
@@ -79,8 +79,3 @@ public class StartPipe
 }
 
 
-
-https://github.com/aneumue/invoice.git
-
-git config --global user.email "a@a.at"
-git config --global user.name "Andy"
