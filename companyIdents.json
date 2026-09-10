@@ -1,0 +1,19 @@
+{
+  "paths": {
+    "msgInput": "/home/andy/Desktop/invoice/input",
+    "pdfOutput": "/home/andy/Desktop/invoice/input",
+    "msgArchive": "/home/andy/Desktop/invoice/input"
+
+  },
+
+  "companies": {
+    "F_AT": [
+      "ATU11111111",
+      "Alpenmarkt"
+    ],
+    "F_DE": [
+      "ATU22222222",
+      "Donau"
+    ]
+  }
+}
