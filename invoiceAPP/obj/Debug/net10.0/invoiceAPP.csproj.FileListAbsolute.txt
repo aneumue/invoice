@@ -1,5 +1,0 @@
-C:\Users\andym\Desktop\invoice\InvoiceAPP\obj\Debug\net10.0\invoiceAPP.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\andym\Desktop\invoice\InvoiceAPP\obj\Debug\net10.0\invoiceAPP.AssemblyInfoInputs.cache
-C:\Users\andym\Desktop\invoice\InvoiceAPP\obj\Debug\net10.0\invoiceAPP.AssemblyInfo.cs
-C:\Users\andym\Desktop\invoice\InvoiceAPP\obj\Debug\net10.0\invoiceAPP.csproj.CoreCompileInputs.cache
-C:\Users\andym\Desktop\invoice\InvoiceAPP\obj\Debug\net10.0\invoiceAPP.sourcelink.json

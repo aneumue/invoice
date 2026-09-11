@@ -1,15 +1,8 @@
 {
   "paths": {
-<<<<<<< HEAD
     "msgInput": "C:\\Users\\andym\\Desktop\\invoice\\input",
     "pdfOutput": "C:\\Users\\andym\\Desktop\\invoice\\input",
     "msgArchive": "C:\\Users\\andym\\Desktop\\invoice\\input"
-=======
-    "msgInput": "/home/andy/Desktop/invoice/input",
-    "pdfOutput": "/home/andy/Desktop/invoice/input",
-    "msgArchive": "/home/andy/Desktop/invoice/input"
->>>>>>> e285f181b10f903eebd1617163e0f3d5c750a33a
-
   },
 
   "companies": {
