@@ -2,7 +2,8 @@
   "paths": {
     "msgInput": "%USERPROFILE%\\Desktop\\invoice\\input",
     "pdfOutput": "%USERPROFILE%\\Desktop\\invoice\\input",
-    "msgArchive": "%USERPROFILE%\\Desktop\\invoice\\input"
+    "msgArchive": "%USERPROFILE%\\Desktop\\invoice\\msg_archive"
+
   },
 
   "companies": {
