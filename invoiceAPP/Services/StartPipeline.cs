@@ -14,7 +14,7 @@ public class StartPipe
         var msgExtractor = new MsgAttachmentExtractor();
 
         string jsonFilePath =
-            "C:\\Users\\andym\\Desktop\\invoice\\companyIdents.json";
+            @"C:\Users\andym\Desktop\invoice\companyIdents.json";
 
         string json = File.ReadAllText(jsonFilePath);
 
