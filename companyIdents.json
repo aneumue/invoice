@@ -1,8 +1,8 @@
 {
   "paths": {
-    "msgInput": "%USERPROFILE%\\Desktop\\invoice\\input",
+    "msgInput": "%USERPROFILE%\\Desktop\\invoice\\mails",
     "pdfOutput": "%USERPROFILE%\\Desktop\\invoice\\input",
-    "msgArchive": "%USERPROFILE%\\Desktop\\invoice\\msg_archive"
+    "msgArchive": "%USERPROFILE%\\Desktop\\invoice\\mails_archive"
 
   },
 
