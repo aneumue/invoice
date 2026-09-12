@@ -12,3 +12,5 @@ dotnet add package Sdcb.PaddleOCR.Models.LocalV5 --version 3.3.1
 dotnet add package Sdcb.PaddleInference --version 3.3.1
 dotnet add package Sdcb.PaddleInference.runtime.win64.mkl --version 3.3.1
 
+dotnet publish -c Release -r win-x64 --self-contained true -o .\publish
+
