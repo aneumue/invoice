@@ -13,23 +13,14 @@ namespace InvoiceAPP;
 
 public partial class MainWindow : Window
 {
-    private static readonly string InputFolder = Path.Combine(
-        Environment.GetFolderPath(
-            Environment.SpecialFolder.DesktopDirectory
-        ),
-        "invoice",
-        "input"
-    );
+    private readonly string _inputFolder;
 
     public MainWindow()
     {
         InitializeComponent();
 
         string jsonFilePath = Path.Combine(
-            Environment.GetFolderPath(
-                Environment.SpecialFolder.DesktopDirectory
-            ),
-            "invoice",
+            AppContext.BaseDirectory,
             "companyIdents.json"
         );
 
@@ -41,13 +32,27 @@ public partial class MainWindow : Window
             {
                 PropertyNameCaseInsensitive = true
             }
-        )!;
+        ) ?? throw new Exception(
+            "Could not load companyIdents.json."
+        );
 
         var companyOptions = new List<string> { "" };
         companyOptions.AddRange(config.Companies.Keys);
 
         CompanySelector.ItemsSource = companyOptions;
         CompanySelector.SelectedIndex = 0;
+
+        string configuredInputFolder =
+            Environment.ExpandEnvironmentVariables(
+                config.Paths.PdfOutput
+            );
+
+        _inputFolder = Path.GetFullPath(
+            Path.Combine(
+                AppContext.BaseDirectory,
+                configuredInputFolder
+            )
+        );
     }
 
     private async void StartPipeline_Click(
@@ -134,6 +139,7 @@ public partial class MainWindow : Window
         if (currentIndex + 1 < InvoiceTable.Items.Count)
         {
             InvoiceTable.SelectedIndex = currentIndex + 1;
+
             InvoiceTable.ScrollIntoView(
                 InvoiceTable.SelectedItem
             );
@@ -171,10 +177,13 @@ public partial class MainWindow : Window
                 continue;
             }
 
+            string company = invoice.Company;
+            string invoiceType = invoice.InvoiceType;
+
             string targetFolder = Path.Combine(
-                InputFolder,
-                invoice.Company,
-                invoice.InvoiceType
+                _inputFolder,
+                company,
+                invoiceType
             );
 
             Directory.CreateDirectory(targetFolder);

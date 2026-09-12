@@ -10,14 +10,29 @@
 
   <ItemGroup>
     <PackageReference Include="MsgReader" Version="6.1.1" />
+
     <PackageReference Include="OpenCvSharp4.Windows" Version="4.13.0.20260627" />
+
     <PackageReference Include="PdfPig" Version="0.1.16" />
+
     <PackageReference Include="PDFtoImage" Version="5.4.0" />
+
     <PackageReference Include="Sdcb.PaddleInference" Version="3.3.1" />
-<PackageReference Include="Sdcb.PaddleInference.runtime.win64.mkl" Version="3.3.1.70" />
+
+    <PackageReference Include="Sdcb.PaddleInference.runtime.win64.mkl" Version="3.3.1.70" />
+
     <PackageReference Include="Sdcb.PaddleOCR" Version="3.3.1" />
+
     <PackageReference Include="Sdcb.PaddleOCR.Models.Local" Version="3.3.1" />
+
     <PackageReference Include="Sdcb.PaddleOCR.Models.LocalV5" Version="3.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\companyIdents.json"
+          Link="companyIdents.json"
+          CopyToOutputDirectory="PreserveNewest"
+          CopyToPublishDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>
