@@ -1,8 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net10.0</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -13,7 +14,7 @@
     <PackageReference Include="PdfPig" Version="0.1.16" />
     <PackageReference Include="PDFtoImage" Version="5.4.0" />
     <PackageReference Include="Sdcb.PaddleInference" Version="3.3.1" />
-    <PackageReference Include="Sdcb.PaddleInference.runtime.win64.mkl" Version="3.3.1" />
+<PackageReference Include="Sdcb.PaddleInference.runtime.win64.mkl" Version="3.3.1.70" />
     <PackageReference Include="Sdcb.PaddleOCR" Version="3.3.1" />
     <PackageReference Include="Sdcb.PaddleOCR.Models.Local" Version="3.3.1" />
     <PackageReference Include="Sdcb.PaddleOCR.Models.LocalV5" Version="3.3.1" />

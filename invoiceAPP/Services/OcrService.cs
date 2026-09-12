@@ -5,6 +5,8 @@ using Sdcb.PaddleOCR;
 using Sdcb.PaddleOCR.Models;
 using Sdcb.PaddleOCR.Models.Local;
 using System;
+using System.IO;
+
 
 namespace InvoiceAPP.Services;
 
