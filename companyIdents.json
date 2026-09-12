@@ -1,8 +1,8 @@
 {
   "paths": {
-    "msgInput": "C:\\Users\\andym\\Desktop\\invoice\\input",
-    "pdfOutput": "C:\\Users\\andym\\Desktop\\invoice\\input",
-    "msgArchive": "C:\\Users\\andym\\Desktop\\invoice\\input"
+    "msgInput": "%USERPROFILE%\\Desktop\\invoice\\input",
+    "pdfOutput": "%USERPROFILE%\\Desktop\\invoice\\input",
+    "msgArchive": "%USERPROFILE%\\Desktop\\invoice\\input"
   },
 
   "companies": {

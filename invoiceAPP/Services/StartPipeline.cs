@@ -13,8 +13,9 @@ public class StartPipe
         var textFinder = new TextFinder();
         var msgExtractor = new MsgAttachmentExtractor();
 
-        string jsonFilePath =
-            @"C:\Users\andym\Desktop\invoice\companyIdents.json";
+        string jsonFilePath = Environment.ExpandEnvironmentVariables(
+            @"%USERPROFILE%\Desktop\invoice\companyIdents.json"
+        );
 
         string json = File.ReadAllText(jsonFilePath);
 
@@ -26,14 +27,29 @@ public class StartPipe
             }
         ) ?? throw new Exception("Could not load configuration.");
 
-        msgExtractor.ExtractPdfs(
-            config.Paths.MsgInput,
-            config.Paths.PdfOutput,
+        string msgInput = Environment.ExpandEnvironmentVariables(
+            config.Paths.MsgInput
+        );
+
+        string pdfOutput = Environment.ExpandEnvironmentVariables(
+            config.Paths.PdfOutput
+        );
+
+        string msgArchive = Environment.ExpandEnvironmentVariables(
             config.Paths.MsgArchive
         );
 
-        string[] filePaths = Directory.GetFiles(config.Paths.PdfOutput, "*.pdf", 
-                                                SearchOption.TopDirectoryOnly);
+        msgExtractor.ExtractPdfs(
+            msgInput,
+            pdfOutput,
+            msgArchive
+        );
+
+        string[] filePaths = Directory.GetFiles(
+            pdfOutput,
+            "*.pdf",
+            SearchOption.TopDirectoryOnly
+        );
 
 
         var invoices = new List<InvoiceMetadata>();
