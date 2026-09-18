@@ -1,0 +1,31 @@
+# .NET build outputs - never commit these (rebuild with `dotnet build`)
+[Bb]in/
+[Oo]bj/
+out/
+publish/
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+
+# Visual Studio / VS Code / Rider
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Test results / coverage
+TestResults/
+coverage*/
+*.coverage
+*.coveragexml
+
+# OS noise
+.DS_Store
+Thumbs.db
+Desktop.ini

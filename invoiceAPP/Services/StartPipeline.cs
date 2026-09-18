@@ -1,6 +1,8 @@
-using InvoiceAPP.Models;
-using System.Text.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text.Json;
+using InvoiceAPP.Models;
 
 namespace InvoiceAPP.Services;
 
@@ -13,8 +15,10 @@ public class StartPipe
         var textFinder = new TextFinder();
         var msgExtractor = new MsgAttachmentExtractor();
 
-        string jsonFilePath =
-            "C:\\Users\\andym\\Desktop\\invoice\\companyIdents.json";
+        string jsonFilePath = Path.Combine(
+            AppContext.BaseDirectory,
+            "companyIdents.json"
+        );
 
         string json = File.ReadAllText(jsonFilePath);
 
@@ -24,30 +28,64 @@ public class StartPipe
             {
                 PropertyNameCaseInsensitive = true
             }
-        ) ?? throw new Exception("Could not load configuration.");
-
-        msgExtractor.ExtractPdfs(
-            config.Paths.MsgInput,
-            config.Paths.PdfOutput,
-            config.Paths.MsgArchive
+        ) ?? throw new Exception(
+            "Could not load companyIdents.json."
         );
 
-        string[] filePaths = Directory.GetFiles(config.Paths.PdfOutput, "*.pdf", 
-                                                SearchOption.TopDirectoryOnly);
+        string msgInput = Path.GetFullPath(
+            Path.Combine(
+                AppContext.BaseDirectory,
+                Environment.ExpandEnvironmentVariables(
+                    config.Paths.MsgInput
+                )
+            )
+        );
 
+        string pdfOutput = Path.GetFullPath(
+            Path.Combine(
+                AppContext.BaseDirectory,
+                Environment.ExpandEnvironmentVariables(
+                    config.Paths.PdfOutput
+                )
+            )
+        );
+
+        string msgArchive = Path.GetFullPath(
+            Path.Combine(
+                AppContext.BaseDirectory,
+                Environment.ExpandEnvironmentVariables(
+                    config.Paths.MsgArchive
+                )
+            )
+        );
+
+        Directory.CreateDirectory(msgInput);
+        Directory.CreateDirectory(pdfOutput);
+        Directory.CreateDirectory(msgArchive);
+
+        msgExtractor.ExtractPdfs(
+            msgInput,
+            pdfOutput,
+            msgArchive
+        );
+
+        string[] filePaths = Directory.GetFiles(
+            pdfOutput,
+            "*.pdf",
+            SearchOption.TopDirectoryOnly
+        );
 
         var invoices = new List<InvoiceMetadata>();
 
-        foreach (var pdfPath in filePaths)
+        foreach (string pdfPath in filePaths)
         {
             var metadata = new InvoiceMetadata
             {
-                FilePath = pdfPath
+                FilePath = pdfPath,
+                ProcessedWith = "DIGITAL"
             };
 
             string text = pdfExtractor.ExtractFirstPage(pdfPath);
-
-            metadata.ProcessedWith = "DIGITAL";
 
             if (string.IsNullOrWhiteSpace(text))
             {
@@ -77,5 +115,3 @@ public class StartPipe
         return invoices;
     }
 }
-
-
