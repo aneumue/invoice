@@ -2,6 +2,8 @@ using MsgReader.Outlook;
 using System.Text;
 using System.IO;
 
+
+
 namespace InvoiceAPP.Services;
 
 public class MsgAttachmentExtractor
@@ -37,7 +39,10 @@ public class MsgAttachmentExtractor
                 }
             }
 
-            string archivePath = Path.Combine(archiveDirectory, Path.GetFileName(msgPath));
+
+            string uniqueMSGFileName = $"{Path.GetFileNameWithoutExtension(msgPath)}_" + $"{Guid.NewGuid():N}.msg";
+
+            string archivePath = Path.Combine(archiveDirectory, uniqueMSGFileName);
 
             File.Move(msgPath, archivePath);
 
